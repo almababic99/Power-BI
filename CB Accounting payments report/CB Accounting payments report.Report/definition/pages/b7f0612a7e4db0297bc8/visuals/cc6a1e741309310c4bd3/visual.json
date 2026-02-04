@@ -1,0 +1,661 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "cc6a1e741309310c4bd3",
+  "position": {
+    "x": 245.41905855338692,
+    "y": 7.3478760045924227,
+    "z": 1000,
+    "height": 459.97703788748566,
+    "width": 1023.5591274397245,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Financial Year"
+                }
+              },
+              "queryRef": "Sum(issuance-reports.Financial Year)",
+              "nativeQueryRef": "Jaar",
+              "displayName": "Jaar"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Period"
+                }
+              },
+              "queryRef": "Sum(issuance-reports.Period)",
+              "nativeQueryRef": "Maand",
+              "displayName": "Maand"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Fund"
+                }
+              },
+              "queryRef": "Sum(issuance-reports.Fund)",
+              "nativeQueryRef": "Paritair comité",
+              "displayName": "Paritair comité"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Union"
+                }
+              },
+              "queryRef": "issuance-reports.Union",
+              "nativeQueryRef": "Vakbond",
+              "displayName": "Vakbond"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PaymentChannelDim"
+                    }
+                  },
+                  "Property": "PaymentChannel_NL"
+                }
+              },
+              "queryRef": "PaymentChannelDim.PaymentChannel_NL",
+              "nativeQueryRef": "Type betaling1",
+              "displayName": "Type betaling"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "ISD Gross Amount"
+                }
+              },
+              "queryRef": "issuance-reports.ISD Gross Amount",
+              "nativeQueryRef": "ISD bruto",
+              "displayName": "ISD bruto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "ISD Net Amount"
+                }
+              },
+              "queryRef": "issuance-reports.ISD Net Amount",
+              "nativeQueryRef": "ISD netto",
+              "displayName": "ISD netto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "ISD Tax withheld Amount"
+                }
+              },
+              "queryRef": "issuance-reports.ISD Tax withheld Amount",
+              "nativeQueryRef": "ISD ingehouden belasting",
+              "displayName": "ISD ingehouden belasting"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Union Gross 95% Amount"
+                }
+              },
+              "queryRef": "issuance-reports.Union Gross 95%",
+              "nativeQueryRef": "Vakbond bruto 95%",
+              "displayName": "Vakbond bruto 95%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "issuance-reports"
+                    }
+                  },
+                  "Property": "Union Gross 5% Amount"
+                }
+              },
+              "queryRef": "issuance-reports.Union Gross 5%",
+              "nativeQueryRef": "Vakbond bruto 5%",
+              "displayName": "Vakbond bruto 5%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "issuance-reports"
+                  }
+                },
+                "Property": "Financial Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#005E79'"
+                    }
+                  }
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "51.961992985688D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Financial Year)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.60012371627238D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Period)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.46395344325015D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Fund)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.80455811480415D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.07570882475784D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union Gross 95%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "154.75768864992276D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union Gross 5%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.96566397593602D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Net Amount"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.37232553296104D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Gross Amount"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100.44249221090725D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PaymentChannelDim.PaymentChannel_NL"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "132.93965577965577D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Tax withheld Amount"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Financial Year)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Period)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(issuance-reports.Fund)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union Gross 95%"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.Union Gross 5%"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Gross Amount"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Net Amount"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "issuance-reports.ISD Tax withheld Amount"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PaymentChannelDim.PaymentChannel_NL"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a1b3e4215b881177a4e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "issuance-reports"
+              }
+            },
+            "Property": "PaymentChannel"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "i",
+              "Entity": "issuance-reports",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "i"
+                            }
+                          },
+                          "Property": "PaymentChannel"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

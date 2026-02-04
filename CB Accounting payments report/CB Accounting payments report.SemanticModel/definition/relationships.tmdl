@@ -1,0 +1,8 @@
+relationship a56785f2-e8e6-4f4b-8120-21154a88fa54
+	fromColumn: Translation.Language
+	toColumn: LanguageList.Language
+
+relationship 84a27eae-7fda-f093-16c4-a3e8ba484575
+	fromColumn: issuance-reports.PaymentChannel
+	toColumn: PaymentChannelDim.PaymentChannel
+

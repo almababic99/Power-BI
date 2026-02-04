@@ -1,0 +1,37 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transform File from issuance-reports'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from issuance-reports\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 19/01/2026 16:27:08.
+queryGroup 'Query Errors - 19/01/2026 16:27:08'
+
+	annotation PBI_QueryGroupOrder = 2
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Translations shared model","issuance-reports","Parameter1","Transform Sample File","Sample File","Transform File","Errors in issuance-reports"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Translation
+ref table LanguageList
+ref table TranslationMeasures
+ref table issuance-reports
+ref table FromYM
+ref table ToYM
+ref table PaymentChannelDim
+
+ref cultureInfo en-GB
+

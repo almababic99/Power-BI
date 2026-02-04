@@ -1,0 +1,40 @@
+table Translation
+	lineageTag: b88d3c54-51c0-4b04-bbb5-f187e7368a7a
+	sourceLineageTag: 735081a0-5970-4c0c-af26-0cd34e6e730c
+
+	column Key
+		dataType: string
+		lineageTag: 060e1b23-80ec-4d2d-ae90-2046eccd1855
+		sourceLineageTag: 42dad10b-5144-4a25-b541-e09092b4509c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = User
+
+	column Language
+		dataType: string
+		lineageTag: d16b9b1b-5184-4344-a602-2220b10b38a5
+		sourceLineageTag: 43c19809-7ec3-425c-9d57-6cf6c8eb8709
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Language
+
+		annotation SummarizationSetBy = User
+
+	column Text
+		dataType: string
+		lineageTag: da3b90b5-a67b-40b9-8ce6-c5d6703eb564
+		sourceLineageTag: b4bea76b-4ea9-480c-b07f-1fc6e88769ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Text
+
+		annotation SummarizationSetBy = User
+
+	partition Translation = entity
+		mode: directQuery
+		source
+			entityName: Translation
+			expressionSource: 'DirectQuery to AS - Translations shared model'
+

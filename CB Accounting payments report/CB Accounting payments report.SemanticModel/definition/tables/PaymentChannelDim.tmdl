@@ -1,0 +1,34 @@
+table PaymentChannelDim
+	lineageTag: eac261cc-41ae-46a5-b916-de5bed70a13e
+
+	column PaymentChannel
+		lineageTag: bcd885ec-cb24-4c2e-b788-3eadcb389af4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PaymentChannel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentChannel_NL
+		lineageTag: 24c7043f-b6f3-451e-9ecd-50a1fdfbc5f7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PaymentChannel_NL]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PaymentChannelDim = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "PaymentChannel", STRING,
+				    "PaymentChannel_NL", STRING,
+				    {
+				        {"ISD", "ISD"},
+				        {"Union", "Vakbond"}
+				    }
+				)
+
+	annotation PBI_Id = 57d02e86167a4c619043e1dd5d47f615
+

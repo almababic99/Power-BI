@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 334,
+            "y": 171.4375
+          },
+          "nodeIndex": "LanguageList",
+          "nodeLineageTag": "ca1c88d0-cebe-4dbe-98f8-cdad724d2641",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 147.4375
+          },
+          "nodeIndex": "Translation",
+          "nodeLineageTag": "b88d3c54-51c0-4b04-bbb5-f187e7368a7a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 142,
+            "y": 358.4375
+          },
+          "nodeIndex": "TranslationMeasures",
+          "nodeLineageTag": "d3fff6e0-0f09-40b0-9285-80a826fb00d1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1134,
+            "y": 329.4375
+          },
+          "nodeIndex": "issuance-reports",
+          "nodeLineageTag": "6492cea1-ac56-4750-b620-908aa521bb1b",
+          "size": {
+            "height": 666,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 862,
+            "y": 56.9375
+          },
+          "nodeIndex": "FromYM",
+          "nodeLineageTag": "2f3ec2b7-03e6-4c13-ad15-50687567bee9",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1368,
+            "y": 80.1875
+          },
+          "nodeIndex": "ToYM",
+          "nodeLineageTag": "58ee2e83-c714-4d8d-84da-348044f014a8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1529,
+            "y": 841.1875
+          },
+          "nodeIndex": "PaymentChannelDim",
+          "nodeLineageTag": "eac261cc-41ae-46a5-b916-de5bed70a13e",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

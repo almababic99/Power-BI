@@ -1,0 +1,18 @@
+table FromYM
+	lineageTag: 2f3ec2b7-03e6-4c13-ad15-50687567bee9
+
+	column YearMonthKey
+		formatString: 0
+		lineageTag: 6ba49ae9-af5f-47c6-8ddd-a6b97f2ce997
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: issuance-reports[YearMonthKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FromYM = calculated
+		mode: import
+		source = DISTINCT ( 'issuance-reports'[YearMonthKey] )
+
+	annotation PBI_Id = 50c621e1859342b5bb7d57c13d87f8d4
+

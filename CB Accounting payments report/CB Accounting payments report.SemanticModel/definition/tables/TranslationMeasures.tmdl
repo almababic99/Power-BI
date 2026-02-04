@@ -1,0 +1,196 @@
+table TranslationMeasures
+	lineageTag: d3fff6e0-0f09-40b0-9285-80a826fb00d1
+	sourceLineageTag: add69dae-d5af-4612-b2b7-359583e65ee4
+
+	measure SelectedLanguage = EXTERNALMEASURE("SelectedLanguage", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: eb8daff2-9adf-4dd6-9999-930e43748652
+		sourceLineageTag: 20089b60-6b54-40c7-865d-a3d53d06ca6a
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_ByKey = EXTERNALMEASURE("T_ByKey", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 4a51b20e-ab87-4c74-af94-b37fed8d60c2
+		sourceLineageTag: 2e8e43ce-d1fd-4539-8a80-7907c802bb01
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Title_Betaalstatus = EXTERNALMEASURE("T_Title_Betaalstatus", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 96e5de51-3a1f-474f-9f38-4df9714f1968
+		sourceLineageTag: dd5b3b3d-0df8-420a-bc16-c716386ec61c
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Status = EXTERNALMEASURE("T_Label_Status", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 8e98bf9e-e38b-4590-b4a7-8c15e8cb2717
+		sourceLineageTag: b7755e3e-8ce5-4323-bff4-701058a551fb
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Column_Amount = EXTERNALMEASURE("T_Column_Amount", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: aa4d24d7-62f2-4212-ae2f-10fa6f48fa80
+		sourceLineageTag: f88fc719-6cff-4ec9-99da-59f4b83cd33d
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Language = EXTERNALMEASURE("T_Label_Language", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 24871d4c-b904-44c7-9ab5-f9c201d1a28e
+		sourceLineageTag: d110b07e-9147-4759-b0f7-fee625c255ec
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Year = EXTERNALMEASURE("T_Label_Year", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 8e46ead0-52b2-4736-8388-074dc0d58021
+		sourceLineageTag: c5308257-91d8-42da-928b-fae1b53788ae
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Employer = EXTERNALMEASURE("T_Label_Employer", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: bbfce6b6-42c2-4315-9b83-ef4a1709d3f8
+		sourceLineageTag: 2faac579-7af2-489c-b90a-6631a39e920d
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Quarter = EXTERNALMEASURE("T_Label_Quarter", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: ffb161fe-c9c7-4814-b1c6-0f6764cb7048
+		sourceLineageTag: 9c448233-5801-4208-b323-b7ba294fec88
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_ParitairComite = EXTERNALMEASURE("T_Label_ParitairComite", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: f077a18e-f012-41f1-976f-2ea5af000c4a
+		sourceLineageTag: 61593b0d-e6a1-4d1e-837a-a9f684b32173
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_ResetFilters = EXTERNALMEASURE("T_Label_ResetFilters", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 6dae577a-3db9-4cac-b724-830d807ec181
+		sourceLineageTag: 6a54b33f-1d94-4308-92c3-f7e3c7cdc446
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_KPI_TotalAmount = EXTERNALMEASURE("T_KPI_TotalAmount", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 52eee526-9386-4fd5-be55-1581b6a6f589
+		sourceLineageTag: 9561006f-8e8a-4378-a86b-ccb160d953ac
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_KPI_UnpaidAmount = EXTERNALMEASURE("T_KPI_UnpaidAmount", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 50cb8df2-6dc6-4827-b87a-229e2104d928
+		sourceLineageTag: c91f4569-7d01-4579-8538-342e649f4fe8
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_KPI_OpenAmountRatio = EXTERNALMEASURE("T_KPI_OpenAmountRatio", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: b18617fd-940a-47d4-ac8e-35228fd164f8
+		sourceLineageTag: 6ffc3ef8-728f-4912-8a4c-784ceeb859c6
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_KPI_AvgDaysLate = EXTERNALMEASURE("T_KPI_AvgDaysLate", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 18dd9241-d3a2-45b0-aca7-90f4230ce2ac
+		sourceLineageTag: 8c51b572-c4d4-4463-a2ab-5f2de0bbd1e3
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_OpenAmountPerComite = EXTERNALMEASURE("T_Label_OpenAmountPerComite", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: d4febd0f-3e9e-40b6-9efd-43a0051783a6
+		sourceLineageTag: da9edb76-efb5-46c9-b42a-64ccac44ac2e
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_PaidOnTime = EXTERNALMEASURE("T_Label_PaidOnTime", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 411f075e-1be3-4dd4-8b01-db6b55ccaebf
+		sourceLineageTag: 916b4eaa-c908-4ca4-9904-320126211265
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_PaidLate = EXTERNALMEASURE("T_Label_PaidLate", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: c6d40826-25de-4fee-bf73-a95a4bf70290
+		sourceLineageTag: 94a0d7b5-7988-4989-9f84-1ab37e1f87d3
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_InvoicesPerPaymentTerm = EXTERNALMEASURE("T_Label_InvoicesPerPaymentTerm", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: ff944b1e-3136-4c31-a3e8-073d63b5fa8e
+		sourceLineageTag: 2bc423ec-c03e-48b9-b3df-9fe9516a571c
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_AmountPerPaymentTerm = EXTERNALMEASURE("T_Label_AmountPerPaymentTerm", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 534451c7-7178-4e67-a3dd-cddaddd11356
+		sourceLineageTag: ffd1c510-bf63-4c52-a624-6bbbe61f68fb
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_PaidBeforeDue = EXTERNALMEASURE("T_Label_PaidBeforeDue", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 6d33a2e5-e5c8-4c5e-9e83-e5ac8648db8e
+		sourceLineageTag: 04ddf0fd-f970-487a-9f5f-240d00aca623
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_PaidAfterDue_TreatedOnTime = EXTERNALMEASURE("T_Label_PaidAfterDue_TreatedOnTime", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 57ab05e6-ae76-4e90-aa54-8e4247649d12
+		sourceLineageTag: f410e236-0f08-4b30-a46a-94375133116f
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_PaidLate_TreatedLate = EXTERNALMEASURE("T_Label_PaidLate_TreatedLate", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: b9704b0c-f88f-4712-8920-be0ddb50cb5b
+		sourceLineageTag: dfcc157d-e561-46a4-b6d3-60d5d5feb35e
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_InvoicesNotYetDue = EXTERNALMEASURE("T_Label_InvoicesNotYetDue", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: f8bbcd6d-32a9-4689-a353-350ebdc46b42
+		sourceLineageTag: c21b448e-46dc-4957-a609-c6c4327ad3c8
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure T_Label_Title_Overview = EXTERNALMEASURE("T_Label_Title_Overview", STRING, "DirectQuery to AS - Translations shared model")
+		lineageTag: 2dae17de-a85d-423d-b432-7e95b90b0784
+		sourceLineageTag: e519ba84-05dd-4213-8001-3091186e095f
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Value
+		dataType: int64
+		formatString: 0
+		lineageTag: 1309f85f-988b-4854-8c39-2a3946340b0d
+		sourceLineageTag: 93d46606-afee-40b9-b180-e47333081b28
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = User
+
+	partition TranslationMeasures = entity
+		mode: directQuery
+		source
+			entityName: TranslationMeasures
+			expressionSource: 'DirectQuery to AS - Translations shared model'
+

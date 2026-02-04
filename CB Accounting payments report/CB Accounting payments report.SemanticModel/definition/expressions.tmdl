@@ -1,0 +1,80 @@
+expression 'DirectQuery to AS - Translations shared model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Shared%20semantic%20models", "Translations shared model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: c1ff62dd-71d4-420d-abdf-f9944802afd3
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 88446838-b717-4d66-b6ce-aa28a012827e
+	queryGroup: 'Transform File from issuance-reports\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet2 = Source{[Name="Sheet1"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet2, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+	lineageTag: 0e820436-bd9b-44cb-91d1-6d75e20e00d2
+	queryGroup: 'Transform File from issuance-reports'
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		    Source = AzureStorage.Blobs("stfluxmetdatatest"),
+		    #"issuance-reports1" = Source{[Name="issuance-reports"]}[Data],
+		    Navigation1 = #"issuance-reports1"{0}[Content]
+		in
+		    Navigation1
+	lineageTag: b16c8b5f-b86d-4a9b-b196-360051d29b3f
+	queryGroup: 'Transform File from issuance-reports\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1 as binary) => let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet2 = Source{[Name="Sheet1"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet2, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: 16a58bbd-fd1a-4936-8699-5ac8266801b4
+	queryGroup: 'Transform File from issuance-reports\Helper Queries'
+
+	annotation PBI_ResultType = Function
+
+expression 'Errors in issuance-reports' =
+		let
+		Source = #"issuance-reports",
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Financial Year", "Period", "Entry date", "G/L Account", "Description", "Amount", "Fund", "FileMonth", "Name", "Union"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Financial Year", "Period", "Entry date", "G/L Account", "Description", "Amount", "Fund", "FileMonth", "Name", "Union"})
+		in
+		  #"Reordered Columns"
+	lineageTag: ac0deedb-535b-4350-97fb-b23ebaf02d87
+	queryGroup: 'Query Errors - 19/01/2026 16:27:08'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

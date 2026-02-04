@@ -1,0 +1,445 @@
+cultureInfo en-GB
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "issuancereports.yearmonthkey": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "YearMonthKey"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fromym.yearmonthkey": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FromYM",
+			          "ConceptualProperty": "YearMonthKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Datum van": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.financial_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Financial Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Jaar": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Maand": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.paymentchannel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "PaymentChannel"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "issuancereports.union_gross_95": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Union Gross 95% Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal vakbond bruto 95% bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Vakbond bruto 95%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.union_gross_5": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Union Gross 5% Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal vakbond bruto 5% bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Vakbond bruto 5%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.isd_gross_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "ISD Gross Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal ISD bruto bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "ISD bruto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.isd_net_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "ISD Net Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal ISD netto bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "ISD netto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.pending_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Pending Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal bedrag in behandeling": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.isd_tax_withheld_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "ISD Tax withheld Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal ISD ingehouden belasting": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "ISD ingehouden belasting": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.pending_paid_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Pending Paid Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal betaald bedrag in behandeling": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.fund": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Fund"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Paritair comité": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.union": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Union"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Vakbond": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.total_gross_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Total Gross Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal bruto bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.total_union_gross_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Total Union Gross Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal vakbond bruto bedrag": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.total_onss_noss_contribution": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "Total ONSS (NOSS) contribution"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "paymentchanneldim.paymentchannel_nl": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "PaymentChannelDim",
+			          "ConceptualProperty": "PaymentChannel_NL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type betaling": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "toym.yearmonthkey": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ToYM",
+			          "ConceptualProperty": "YearMonthKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Datum tot": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "issuancereports.noss_contribution_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "issuance-reports",
+			          "ConceptualProperty": "NOSS Contribution Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Totaal ONSS (NOSS) bijdrage": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

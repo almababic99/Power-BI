@@ -1,0 +1,420 @@
+table issuance-reports
+	lineageTag: 6492cea1-ac56-4750-b620-908aa521bb1b
+
+	measure 'Pending Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[AmountType] = "Pending",
+			            REMOVEFILTERS(PaymentChannelDim),
+			            REMOVEFILTERS('issuance-reports'[Union]),
+			            KEEPFILTERS(
+			                FILTER(
+			                    ALL('issuance-reports'[YearMonthKey]),
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 50772c49-3ff6-492c-af55-4b75a3fc1002
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Union Gross 95% Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[PaymentChannel] = "Union",
+			            'issuance-reports'[AmountType] = "Union Gross 95%",
+			            KEEPFILTERS(
+			                FILTER(
+			                    'issuance-reports',
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: ec16d5da-47e4-4ce2-9f43-acd8cc6c83e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Union Gross 5% Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[PaymentChannel] = "Union",
+			            'issuance-reports'[AmountType] = "Union Gross 5%",
+			            KEEPFILTERS(
+			                FILTER(
+			                    'issuance-reports',
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 33234586-8e4c-4a2d-9ebe-3dc8f7783f54
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ISD Gross Amount' = [ISD Net Amount] + [ISD Tax withheld Amount]
+		lineageTag: 671a921d-ad9a-4e2e-aa01-76246290afec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ISD Net Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[PaymentChannel] = "ISD",
+			            'issuance-reports'[AmountType] = "ISD Net",
+			            KEEPFILTERS(
+			                FILTER(
+			                    'issuance-reports',
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 841ced21-81e3-45b3-a36d-cea18891db5b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ISD Tax withheld Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[PaymentChannel] = "ISD",
+			            'issuance-reports'[AmountType] = "ISD Tax",
+				    'issuance-reports'[Amount] > 0,
+			            KEEPFILTERS(
+			                FILTER(
+			                    'issuance-reports',
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 13a79f82-1f9f-4dc7-911f-a35022120118
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Gross Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[AmountType] = "Total Gross",
+			            REMOVEFILTERS(PaymentChannelDim),
+			            REMOVEFILTERS('issuance-reports'[Union]),
+			            KEEPFILTERS(
+			                FILTER(
+			                    ALL('issuance-reports'[YearMonthKey]),
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: c1bf0f99-a0ca-4f04-aa4c-8f0a597c294c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Union Gross Amount' = [Union Gross 95% Amount] + [Union Gross 5% Amount]
+		lineageTag: 2f9b94f1-27a9-4e99-a60d-91664b6a58a0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total ONSS (NOSS) contribution' = "--"
+		lineageTag: 84e066c9-020b-4c5f-8762-ae29633ef783
+
+	measure 'Pending Paid Amount' =
+			
+			VAR FromKey = SELECTEDVALUE(FromYM[YearMonthKey])
+			VAR ToKey   = SELECTEDVALUE(ToYM[YearMonthKey])
+			RETURN
+			IF(
+			    ISBLANK(FromKey) || ISBLANK(ToKey),
+			    BLANK(),
+			    ABS(
+			        CALCULATE(
+			            SUM('issuance-reports'[Amount]),
+			            'issuance-reports'[AmountType] = "Pending Paid",
+			            REMOVEFILTERS(PaymentChannelDim),
+			            REMOVEFILTERS('issuance-reports'[Union]),
+			            KEEPFILTERS(
+			                FILTER(
+			                    ALL('issuance-reports'[YearMonthKey]),
+			                    'issuance-reports'[YearMonthKey] >= FromKey &&
+			                    'issuance-reports'[YearMonthKey] <= ToKey
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 485438cd-ea69-4a34-b1ca-8edd5befc4d6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'NOSS Contribution Amount' =
+			
+			VAR FromKey = SELECTEDVALUE ( FromYM[YearMonthKey] )
+			VAR ToKey   = SELECTEDVALUE ( ToYM[YearMonthKey] )
+			RETURN
+			IF (
+			    ISBLANK ( FromKey ) || ISBLANK ( ToKey ),
+			    BLANK(),
+			    CALCULATE (
+			        SUM ( 'issuance-reports'[Amount] ),
+			        'issuance-reports'[AmountType] = "NOSS",
+			        'issuance-reports'[Amount] > 0,
+				REMOVEFILTERS(PaymentChannelDim),
+			        REMOVEFILTERS('issuance-reports'[Union]),
+			        KEEPFILTERS (
+			            FILTER (
+			                ALL ( 'issuance-reports'[YearMonthKey] ),
+			                'issuance-reports'[YearMonthKey] >= FromKey
+			                    && 'issuance-reports'[YearMonthKey] <= ToKey
+			            )
+			        )
+			    )
+			)
+		lineageTag: befff2b4-2b0e-474a-87e6-fe9ca8d5e96f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Financial Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: ef868048-d2ca-4b9e-ab0c-f01ee2490324
+		summarizeBy: sum
+		sourceColumn: Financial Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a6401d4-611c-4dd9-91e5-7518566c7c3b
+		summarizeBy: sum
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entry date'
+		dataType: string
+		lineageTag: cb38e455-19ed-4373-951b-bb794299ef7f
+		summarizeBy: none
+		sourceColumn: Entry date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'G/L Account'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07cfe3b6-679a-4d8b-9f27-0fc342e79658
+		summarizeBy: sum
+		sourceColumn: G/L Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: aa00ff08-6ae6-4963-95ff-176d347c3de5
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		lineageTag: 69e7ad0f-be7f-4546-bb13-7d5d63d5d16e
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fund
+		dataType: int64
+		formatString: 0
+		lineageTag: 4168c8b7-7dbb-4995-90a2-e7a128b69274
+		summarizeBy: sum
+		sourceColumn: Fund
+
+		annotation SummarizationSetBy = Automatic
+
+	column Union
+		dataType: string
+		lineageTag: be1a1921-a619-4d90-b9e8-a5b3582a7447
+		summarizeBy: none
+		sourceColumn: Union
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthKey = 'issuance-reports'[Financial Year] * 100 + 'issuance-reports'[Period]
+		formatString: 0
+		lineageTag: 61b5cb87-dd80-4633-b44c-cb8c5bcf6b05
+		summarizeBy: count
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 5b8d3d87-915a-43e3-bf31-8681505d196d
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentChannel
+		dataType: string
+		lineageTag: c2fa6ccd-dec8-49d5-bd81-994f08f10ad1
+		summarizeBy: none
+		sourceColumn: PaymentChannel
+
+		annotation SummarizationSetBy = Automatic
+
+	column AmountType
+		dataType: string
+		lineageTag: 4ad6d911-52d5-4e27-95b5-317938da07f3
+		summarizeBy: none
+		sourceColumn: AmountType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition issuance-reports = m
+		mode: import
+		source = ```
+				let
+				    Source = AzureStorage.Blobs("stfluxmetdatatest"),
+				    Container = Source{[Name="issuance-reports"]}[Data],
+				    FilterExcel = Table.SelectRows(
+				        Container,
+				        each Text.EndsWith([Name], ".xls")
+				        and 
+				        (
+				            Text.StartsWith([Name], "After_Issuance_")
+				            or Text.StartsWith([Name], "NossAmounts")
+				            or Text.StartsWith([Name], "issuance_")
+				        )
+				    ),
+				    AddFund = Table.AddColumn(
+				        FilterExcel,
+				        "Fund",
+				        each
+				            let
+				                parts = Text.Split([Name], "_"),
+				                pcPart = List.Last(parts),     
+				                pc = Text.BeforeDelimiter(pcPart, ".") 
+				            in
+				                Number.FromText(Text.AfterDelimiter(pc, "PC")),
+				        Int64.Type
+				    ),
+				    #"Filtered Hidden Files1" = Table.SelectRows(AddFund, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Invoke Custom Function1", {"Transform File", "Name", "Fund"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Financial Year", Int64.Type}, {"Period", Int64.Type}, {"Entry date", type text}, {"G/L Account", Int64.Type}, {"Description", type text}, {"Amount", type number}}),
+				    AddUnion = Table.AddColumn(
+				        #"Changed Type",
+				        "Union",
+				        each
+				            let d = Text.Upper([Description] & "")
+				            in
+				                if Text.Contains(d, "ABVV") then "ABVV"
+				                else if Text.Contains(d, "ACLVB") then "ACLVB"
+				                else if Text.Contains(d, "ACV") then "ACV"
+				                else if Text.Contains(d, "MWB") then "MWB"
+				                else null,
+				        type text
+				    ),
+				    AddPaymentChannel = Table.AddColumn(
+				        AddUnion,
+				        "PaymentChannel",
+				        each
+				            let d = Text.Upper([Description] & "")
+				            in
+				                if [Union] <> null then "Union"
+				                else if Text.Contains(d, "ISD") then "ISD"
+				                else null,
+				        type text
+				    ),
+				    AddAmountType = Table.AddColumn(
+				        AddPaymentChannel,
+				        "AmountType",
+				        each
+				            let d = Text.Upper([Description] & "")
+				            in
+				                if Text.Contains(d, "PENDING (LETTER IBAN)") then "Pending"
+				                else if Text.Contains(d, "PENDING ISSUANCES PAID") then "Pending Paid"
+				                else if Text.Contains(d, "ISD WT") then "ISD Tax"
+				                else if [PaymentChannel] = "ISD" and Text.Contains(d, "NET") then "ISD Net"
+				                else if [PaymentChannel] = "Union" and Text.Contains(d, "GROSS") and Text.Contains(d, "95%") then "Union Gross 95%"
+				                else if [PaymentChannel] = "Union" and Text.Contains(d, "GROSS") and Text.Contains(d, "5%") then "Union Gross 5%"
+				                else if Text.Contains(d, "NOSS") then "NOSS"
+				                else if Text.Contains(d, "100% GROSS") and Text.Contains(d, "TO BE PAID") then "Total Gross"
+				                else null,
+				        type text
+				    ),
+				    #"Filtered Rows" = Table.SelectRows(AddAmountType, each true)
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

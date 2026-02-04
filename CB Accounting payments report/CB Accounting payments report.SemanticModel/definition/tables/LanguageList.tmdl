@@ -1,0 +1,21 @@
+table LanguageList
+	lineageTag: ca1c88d0-cebe-4dbe-98f8-cdad724d2641
+	sourceLineageTag: 66ccf212-a68e-4451-b64f-1851aa5f8710
+
+	column Language
+		dataType: string
+		isNullable: false
+		lineageTag: 614b2f49-1b9f-477c-8d3a-3af38224fd4f
+		sourceLineageTag: b0bf6407-8c19-4cb8-bf8b-6af8d575dc7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Language
+
+		annotation SummarizationSetBy = User
+
+	partition LanguageList = entity
+		mode: directQuery
+		source
+			entityName: LanguageList
+			expressionSource: 'DirectQuery to AS - Translations shared model'
+
