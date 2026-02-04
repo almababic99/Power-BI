@@ -28,7 +28,7 @@
               },
               "queryRef": "issuance-reports.Pending Amount",
               "nativeQueryRef": "Totaal bedrag in behandeling",
-              "displayName": "Totaal bedrag in behandeling"
+              "displayName": "TEST"
             },
             {
               "field": {
